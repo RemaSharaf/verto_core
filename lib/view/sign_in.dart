@@ -6,6 +6,7 @@ class SignIN extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String value = "";
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -60,6 +61,8 @@ class SignIN extends StatelessWidget {
                       Row(
                         children: [
                           Radio(
+                            fillColor:
+                                MaterialStatePropertyAll(Color(0xffF58042)),
                             value: true,
                             groupValue: 1,
                             onChanged: (value) {},
