@@ -168,6 +168,7 @@ Widget textFiled(
     bool fullSize = false}) {
   return Container(
     margin: EdgeInsets.only(top: 17.h),
+    padding: EdgeInsets.symmetric(horizontal: fullSize ? 16.w : 0),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -176,7 +177,10 @@ Widget textFiled(
             Text(title),
             Text(
               "*",
-              style: TextStyle(color: const Color(0xffD80027), fontSize: 15.sp),
+              style: TextStyle(
+                color: const Color(0xffD80027),
+                fontSize: 15.sp,
+              ),
             )
           ],
         ),
@@ -204,7 +208,10 @@ Widget dropDown({required String title, required String hint}) {
             Text(title),
             Text(
               "*",
-              style: TextStyle(color: const Color(0xffD80027), fontSize: 15.sp),
+              style: TextStyle(
+                color: const Color(0xffD80027),
+                fontSize: 15.sp,
+              ),
             )
           ],
         ),
