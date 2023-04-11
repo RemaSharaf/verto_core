@@ -171,7 +171,15 @@ Widget textFiled(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        Row(
+          children: [
+            Text(title),
+            Text(
+              "*",
+              style: TextStyle(color: const Color(0xffD80027), fontSize: 15.sp),
+            )
+          ],
+        ),
         SizedBox(
           width: fullSize ? 295.w : 148.w,
           height: 44.h,
@@ -191,7 +199,15 @@ Widget dropDown({required String title, required String hint}) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        Row(
+          children: [
+            Text(title),
+            Text(
+              "*",
+              style: TextStyle(color: const Color(0xffD80027), fontSize: 15.sp),
+            )
+          ],
+        ),
         DropdownButtonFormField<String>(
             hint: Text(
               hint,
