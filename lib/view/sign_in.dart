@@ -110,22 +110,35 @@ class SignIN extends StatelessWidget {
                 dropDown(hint: "قم بتحديد المحافظة", title: "المحافظة"),
                 Container(
                   margin: EdgeInsets.only(top: 16.h),
-                  child: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: 11.0.sp,
-                        color: const Color(0xff20225C),
-                        fontFamily: "FFShamelFamily",
-                      ),
-                      children: const [
-                        TextSpan(
-                            text: 'الموافقة على',
-                            style: TextStyle(color: Color(0xffACACAC))),
-                        TextSpan(
-                          text: ' سياسة والشروط الاستخدام',
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        value: false,
+                        onChanged: (value) {},
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
                         ),
-                      ],
-                    ),
+                        fillColor:
+                            const MaterialStatePropertyAll(Color(0xffF8F9FB)),
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            fontSize: 11.0.sp,
+                            color: const Color(0xff20225C),
+                            fontFamily: "FFShamelFamily",
+                          ),
+                          children: const [
+                            TextSpan(
+                                text: 'الموافقة على',
+                                style: TextStyle(color: Color(0xffACACAC))),
+                            TextSpan(
+                              text: ' سياسة والشروط الاستخدام',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Container(
