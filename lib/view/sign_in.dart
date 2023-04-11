@@ -6,7 +6,7 @@ class SignIN extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String value = "";
+    String value = "male";
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -63,11 +63,14 @@ class SignIN extends StatelessWidget {
                           Radio(
                             fillColor:
                                 MaterialStatePropertyAll(Color(0xffF58042)),
-                            value: true,
-                            groupValue: 1,
+                            value: "male",
+                            groupValue: value,
                             onChanged: (value) {},
                           ),
-                          Text("ذكر "),
+                          const Text(
+                            "ذكر ",
+                            style: TextStyle(color: Color(0xffF58042)),
+                          ),
                         ],
                       ),
                       Row(
@@ -75,8 +78,8 @@ class SignIN extends StatelessWidget {
                           Row(
                             children: [
                               Radio(
-                                value: true,
-                                groupValue: 1,
+                                value: "female",
+                                groupValue: value,
                                 onChanged: (value) {},
                               ),
                               Text("انثى "),
