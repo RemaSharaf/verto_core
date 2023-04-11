@@ -108,21 +108,24 @@ class SignIN extends StatelessWidget {
                   child: dropDown(hint: "قم بتحديد الدولة", title: "الدولة"),
                 ),
                 dropDown(hint: "قم بتحديد المحافظة", title: "المحافظة"),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontSize: 11.0.sp,
-                      color: const Color(0xff20225C),
-                      fontFamily: "FFShamelFamily",
-                    ),
-                    children: const [
-                      TextSpan(
-                          text: 'الموافقة على',
-                          style: TextStyle(color: Color(0xffACACAC))),
-                      TextSpan(
-                        text: ' سياسة والشروط الاستخدام',
+                Container(
+                  margin: EdgeInsets.only(top: 16.h),
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: 11.0.sp,
+                        color: const Color(0xff20225C),
+                        fontFamily: "FFShamelFamily",
                       ),
-                    ],
+                      children: const [
+                        TextSpan(
+                            text: 'الموافقة على',
+                            style: TextStyle(color: Color(0xffACACAC))),
+                        TextSpan(
+                          text: ' سياسة والشروط الاستخدام',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
