@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:verto_core/core/values/colors.dart';
 
 ThemeData themes() {
   return ThemeData(
-    // scaffoldBackgroundColor: Colors.white,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xffF58042),
-      onSecondaryContainer: Colors.orange,
-    ),
+    fontFamily: "FFShamelFamily",
+    appBarTheme: const AppBarTheme(
+        color: Colors.transparent,
+        elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: orange,
+        )),
     textTheme: const TextTheme(
+      labelLarge: TextStyle(color: star),
       bodyMedium: TextStyle(
-        color: Color(0xff20225C),
-        fontFamily: "FFShamelFamily",
+        color: text,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -31,18 +35,19 @@ ThemeData themes() {
         borderRadius: BorderRadius.circular(8),
       ),
       filled: true,
-      fillColor: const Color(0xffF8F9FB),
+      fillColor: textInput,
       hintStyle: TextStyle(
-          color: const Color(0xff8E8E9380),
-          fontWeight: FontWeight.w400,
-          fontSize: 13.sp),
+        color: hint,
+        fontWeight: FontWeight.w400,
+        fontSize: 11.sp,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         textStyle: MaterialStatePropertyAll(TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14.sp,
-            fontFamily: "FFShamelFamilys")),
+          fontWeight: FontWeight.bold,
+          fontSize: 14.sp,
+        )),
         minimumSize: MaterialStatePropertyAll(Size(295.w, 48.h)),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
@@ -50,7 +55,7 @@ ThemeData themes() {
           ),
         ),
         backgroundColor: const MaterialStatePropertyAll(
-          Color(0xffF58042),
+          orange,
         ),
       ),
     ),
