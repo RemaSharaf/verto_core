@@ -32,7 +32,20 @@ Widget dropDown(
             icon: const Icon(
               Icons.keyboard_arrow_down,
             ),
-            items: []),
+            items: const [
+              DropdownMenuItem(
+                value: "1",
+                child: Text("B1"),
+              ),
+              DropdownMenuItem(
+                value: "2",
+                child: Text("Bb"),
+              ),
+              DropdownMenuItem(
+                value: "3",
+                child: Text("ss"),
+              ),
+            ]),
       ],
     ),
   );

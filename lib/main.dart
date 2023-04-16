@@ -12,8 +12,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setSystemUIOverlayStyle(
-    //     const SystemUiOverlayStyle(statusBarColor: Color(0xffF58042)));
     return ScreenUtilInit(
       minTextAdapt: true,
       splitScreenMode: true,

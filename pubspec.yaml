@@ -81,7 +81,7 @@ flutter:
     - family: FFShamelFamily
       fonts:
         - asset: fonts/FFShamelFamily-SansOneBold.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+        - asset: fonts/FFShamelFamily-SansOneBook.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

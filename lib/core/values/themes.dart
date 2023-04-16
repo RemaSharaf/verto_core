@@ -10,6 +10,9 @@ ThemeData themes() {
         color: Colors.transparent,
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle(
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.dark,
+          systemNavigationBarDividerColor: Colors.black,
           statusBarColor: orange,
         )),
     textTheme: const TextTheme(
