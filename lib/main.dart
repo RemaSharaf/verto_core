@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: themes(),
         locale: const Locale("ar"),
         initialBinding: HomeBinding(),
-        home: const Home(),
+        home: Home(),
       ),
     );
   }

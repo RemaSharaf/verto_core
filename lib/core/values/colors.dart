@@ -6,3 +6,4 @@ const text = Color(0xff20225C);
 const rich = Color(0xffACACAC);
 const star = Color(0xffD80027);
 const hint = Color(0xff8E8E9380);
+const circle = Color(0xffD9D9D9);
