@@ -7,3 +7,5 @@ const rich = Color(0xffACACAC);
 const star = Color(0xffD80027);
 const hint = Color(0xff8E8E9380);
 const circle = Color(0xffD9D9D9);
+const border = Color(0xff8E8E931A);
+const green = Color(0xff0B9E45);

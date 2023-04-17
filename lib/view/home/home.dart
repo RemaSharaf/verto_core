@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/view/bottom_sheet.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Home extends GetView<HomeController> {
@@ -140,16 +141,18 @@ class Home extends GetView<HomeController> {
                       topRight: Radius.circular(30))),
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.h),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                child: ListView(
+                  padding: EdgeInsets.zero,
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 19.h, bottom: 16.h),
-                      width: 64.w,
-                      height: 5.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: text,
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 19.h, bottom: 16.h),
+                        width: 64.w,
+                        height: 5.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: text,
+                        ),
                       ),
                     ),
                     Container(
@@ -209,19 +212,19 @@ class Home extends GetView<HomeController> {
                           )),
                     ),
                     SizedBox(
-                      height: 150.h,
+                      height: 180.h,
                       child: GridView.builder(
                         scrollDirection: Axis.horizontal,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 60.w,
-                          crossAxisSpacing: 24,
-                        ),
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 30.w,
+                            crossAxisSpacing: 10),
                         itemCount: 6,
                         itemBuilder: (context, index) {
                           return Column(
                             children: [
                               Container(
+                                margin: EdgeInsets.only(bottom: 5.h),
                                 width: 62,
                                 height: 62,
                                 decoration: BoxDecoration(
@@ -233,10 +236,151 @@ class Home extends GetView<HomeController> {
                                       "assets/images/Vector.svg"),
                                 ),
                               ),
+                              Text(
+                                "حوالات",
+                                style: Theme.of(context).textTheme.labelMedium,
+                              ),
                             ],
                           );
                         },
                       ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: 30.h,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "اخر العمليات",
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                          Text(
+                            "عرض الكل",
+                            style: Theme.of(context).textTheme.bodySmall,
+                          )
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                      padding: EdgeInsets.only(top: 13.h),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            bottomSheet(
+                                icon:
+                                    SvgPicture.asset("assets/images/Layer.svg"),
+                                widget: const Text("data"));
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8.w, vertical: 7.h),
+                            margin: const EdgeInsets.only(bottom: 10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: hint,
+                                width: 1,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 5.w),
+                                      padding: const EdgeInsets.all(12),
+                                      width: 40.w,
+                                      height: 40.h,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: orange,
+                                      ),
+                                      child: SvgPicture.asset(
+                                        "assets/images/payout.svg",
+                                      ),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "ارسال حوالة",
+                                          style: TextStyle(
+                                            color: text,
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w300,
+                                          ),
+                                        ),
+                                        Row(
+                                          children: [
+                                            const CircleAvatar(
+                                              radius: 10,
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.symmetric(
+                                                  horizontal: 5.w),
+                                              child: Text(
+                                                "الاستاذ محي الدين",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodySmall,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Localizations.override(
+                                      context: context,
+                                      locale: const Locale("en"),
+                                      child: RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              style: TextStyle(
+                                                  color: green,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14.sp),
+                                              text: "+ 20.456 ",
+                                            ),
+                                            TextSpan(
+                                                text: "YER",
+                                                style: TextStyle(
+                                                  color: green,
+                                                  fontSize: 14.sp,
+                                                )),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin:
+                                          EdgeInsets.symmetric(horizontal: 5.w),
+                                      child: Text(
+                                        "20 مارس",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     )
                   ],
                 ),

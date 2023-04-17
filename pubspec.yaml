@@ -39,8 +39,8 @@ dependencies:
   get_storage: ^2.1.1
   google_fonts: ^4.0.3
   flutter_form_builder: ^7.8.0
-  carousel_slider: ^4.2.1
   flutter_svg: ^2.0.5
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +84,7 @@ flutter:
       fonts:
         - asset: fonts/FFShamelFamily-SansOneBold.ttf
         - asset: fonts/FFShamelFamily-SansOneBook.ttf
+          weight: 300
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

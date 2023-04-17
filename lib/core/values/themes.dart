@@ -16,14 +16,18 @@ ThemeData themes() {
           statusBarColor: orange,
         )),
     textTheme: const TextTheme(
-      labelLarge: TextStyle(color: star),
-      bodyMedium: TextStyle(
-        color: text,
-      ),
-      titleSmall: TextStyle(color: Colors.white),
-      titleMedium: TextStyle(color: Colors.white),
-      titleLarge: TextStyle(color: Colors.white),
-    ),
+        labelLarge: TextStyle(color: star),
+        bodyMedium: TextStyle(
+          color: text,
+        ),
+        titleSmall: TextStyle(color: Colors.white),
+        titleMedium: TextStyle(color: Colors.white),
+        titleLarge: TextStyle(color: Colors.white),
+        labelMedium: TextStyle(
+          color: orange,
+          fontSize: 14,
+        ),
+        bodySmall: TextStyle(color: hint, fontSize: 9)),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 11.h),
       enabledBorder: OutlineInputBorder(
