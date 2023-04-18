@@ -5,6 +5,7 @@ import 'package:verto_core/core/values/colors.dart';
 
 ThemeData themes() {
   return ThemeData(
+    scaffoldBackgroundColor: Colors.white,
     fontFamily: "FFShamelFamily",
     appBarTheme: const AppBarTheme(
         color: Colors.transparent,

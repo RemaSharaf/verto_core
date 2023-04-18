@@ -9,3 +9,4 @@ const hint = Color(0xff8E8E9380);
 const circle = Color(0xffD9D9D9);
 const border = Color(0xff8E8E931A);
 const green = Color(0xff0B9E45);
+const background = Color(0xffFDFDFE);

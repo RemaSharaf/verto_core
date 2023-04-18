@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/core/values/colors.dart';
 import 'package:verto_core/view/bottom_sheet.dart';
+import 'package:verto_core/view/home/widgets/eye.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Home extends GetView<HomeController> {
@@ -24,112 +27,101 @@ class Home extends GetView<HomeController> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
               color: orange,
-              height: 300.h,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              height: 200.h,
+              child: Stack(
                 children: [
-                  SizedBox(
-                    height: 50.h,
+                  Positioned(
+                    top: 60.h,
+                    left: 0,
+                    child: CustomPaint(
+                      foregroundPainter: PieChartPainter2(),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                      ),
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 15.h,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const CircleAvatar(
-                            radius: 24,
+                          Row(
+                            children: [
+                              const CircleAvatar(
+                                radius: 24,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 14.w),
+                                child: Text(
+                                  "مرحبا , روز",
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 14.w),
-                            child: Text(
-                              "مرحبا , روز",
-                              style: Theme.of(context).textTheme.titleSmall,
-                            ),
-                          ),
+                          notification()
                         ],
                       ),
                       Container(
-                        width: 38.w,
-                        height: 38.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.2),
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 1,
-                          ),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Stack(
-                            children: [
-                              Container(
-                                width: 5.w,
-                                height: 5.h,
-                                decoration: const BoxDecoration(
-                                  color: star,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                              const Icon(
-                                Icons.notifications_outlined,
-                              ),
-                            ],
-                          ),
+                        padding: EdgeInsets.only(top: 18.h, bottom: 3.h),
+                        child: Text(
+                          "الرصيد",
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                       ),
+                      Row(
+                        children: [
+                          Localizations.override(
+                            context: context,
+                            locale: const Locale("en"),
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    style:
+                                        Theme.of(context).textTheme.titleLarge,
+                                    text: "40.3555 ",
+                                  ),
+                                  TextSpan(
+                                    text: "YER",
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 15.w),
+                            width: 38.w,
+                            height: 38.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(.2),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 1,
+                              ),
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              Icons.remove_red_eye_outlined,
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.only(top: 18.h, bottom: 3.h),
-                    child: Text(
-                      "الرصيد",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Localizations.override(
-                        context: context,
-                        locale: const Locale("en"),
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                style: Theme.of(context).textTheme.titleLarge,
-                                text: "40.3555 ",
-                              ),
-                              TextSpan(
-                                text: "YER",
-                                style: Theme.of(context).textTheme.titleSmall,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 15.w),
-                        width: 38.w,
-                        height: 38.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.2),
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 1,
-                          ),
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.remove_red_eye_outlined,
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
           ),
           Positioned(
-            top: 225,
+            top: 205,
             left: 0,
             right: 0,
             bottom: 0,
@@ -390,5 +382,29 @@ class Home extends GetView<HomeController> {
         ],
       ),
     );
+  }
+}
+
+class PieChartPainter2 extends CustomPainter {
+  final homeCtrl = Get.find<HomeController>();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Offset center = Offset(size.width / 3, size.height / 20);
+    double radius = min(size.width / 3, size.height / 1);
+    double startRadian = -pi / 10;
+    var paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 20;
+    final sweepRadian = (2 / 5) * 2 * pi;
+    paint.color = Colors.white.withOpacity(.2);
+    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), startRadian,
+        sweepRadian, false, paint);
+    // startRadian += sweepRadian;
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }
