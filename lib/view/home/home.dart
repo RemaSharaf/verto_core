@@ -1,13 +1,12 @@
 import 'dart:math';
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/core/values/colors.dart';
 import 'package:verto_core/view/bottom_sheet.dart';
-import 'package:verto_core/view/home/widgets/eye.dart';
+import 'package:verto_core/view/home/widgets/notification.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Home extends GetView<HomeController> {
@@ -16,18 +15,18 @@ class Home extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(),
+      // extendBodyBehindAppBar: true,
+      // appBar: AppBar(),
       body: Stack(
         children: [
           Positioned(
-            top: 0,
+            top: 40.h,
             left: 0,
             right: 0,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
               color: orange,
-              height: 200.h,
+              height: 300.h,
               child: Stack(
                 children: [
                   Positioned(
@@ -35,7 +34,7 @@ class Home extends GetView<HomeController> {
                     left: 0,
                     child: CustomPaint(
                       foregroundPainter: PieChartPainter2(),
-                      child: Container(
+                      child: const SizedBox(
                         height: 150,
                         width: 150,
                       ),
@@ -121,7 +120,7 @@ class Home extends GetView<HomeController> {
             ),
           ),
           Positioned(
-            top: 205,
+            top: 250,
             left: 0,
             right: 0,
             bottom: 0,
@@ -147,62 +146,62 @@ class Home extends GetView<HomeController> {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 24.h),
-                      child: Obx(() => Stack(
-                            children: [
-                              Positioned(
-                                child: CarouselSlider(
-                                    items: controller.images
-                                        .map(
-                                          (e) => ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            child: Image.asset(
-                                              e["image_path"],
-                                              fit: BoxFit.cover,
-                                              height: 157.h,
-                                            ),
-                                          ),
-                                        )
-                                        .toList(),
-                                    options: CarouselOptions(
-                                      viewportFraction: 1,
-                                      autoPlay: true,
-                                      aspectRatio: 2,
-                                      onPageChanged: (index, reason) {
-                                        controller.changeCurrentIndex(index);
-                                      },
-                                    )),
-                              ),
-                              Positioned(
-                                bottom: 10,
-                                right: 0,
-                                left: 0,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: controller.images
-                                      .asMap()
-                                      .entries
-                                      .map((entry) {
-                                    return Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 3.w),
-                                      width: 9,
-                                      height: 9,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: entry.key ==
-                                                  controller.currentIndex.value
-                                              ? orange
-                                              : circle),
-                                    );
-                                  }).toList(),
-                                ),
-                              ),
-                            ],
-                          )),
-                    ),
+                    // Container(
+                    //   margin: EdgeInsets.symmetric(vertical: 24.h),
+                    //   child: Obx(() => Stack(
+                    //         children: [
+                    //           Positioned(
+                    //             child: CarouselSlider(
+                    //                 items: controller.images
+                    //                     .map(
+                    //                       (e) => ClipRRect(
+                    //                         borderRadius:
+                    //                             BorderRadius.circular(15),
+                    //                         child: Image.asset(
+                    //                           e["image_path"],
+                    //                           fit: BoxFit.cover,
+                    //                           height: 157.h,
+                    //                         ),
+                    //                       ),
+                    //                     )
+                    //                     .toList(),
+                    //                 options: CarouselOptions(
+                    //                   viewportFraction: 1,
+                    //                   autoPlay: true,
+                    //                   aspectRatio: 2,
+                    //                   onPageChanged: (index, reason) {
+                    //                     controller.changeCurrentIndex(index);
+                    //                   },
+                    //                 )),
+                    //           ),
+                    //           Positioned(
+                    //             bottom: 10,
+                    //             right: 0,
+                    //             left: 0,
+                    //             child: Row(
+                    //               mainAxisAlignment: MainAxisAlignment.center,
+                    //               children: controller.images
+                    //                   .asMap()
+                    //                   .entries
+                    //                   .map((entry) {
+                    //                 return Container(
+                    //                   margin:
+                    //                       EdgeInsets.symmetric(horizontal: 3.w),
+                    //                   width: 9,
+                    //                   height: 9,
+                    //                   decoration: BoxDecoration(
+                    //                       shape: BoxShape.circle,
+                    //                       color: entry.key ==
+                    //                               controller.currentIndex.value
+                    //                           ? orange
+                    //                           : circle),
+                    //                 );
+                    //               }).toList(),
+                    //             ),
+                    //           ),
+                    //         ],
+                    //       )),
+                    // ),
                     SizedBox(
                       height: 180.h,
                       child: GridView.builder(
@@ -266,7 +265,8 @@ class Home extends GetView<HomeController> {
                             bottomSheet(
                                 icon:
                                     SvgPicture.asset("assets/images/Layer.svg"),
-                                widget: const Text("data"));
+                                widget: const Text("data"),
+                                context: context);
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(

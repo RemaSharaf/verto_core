@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:verto_core/view/home/home.dart';
 import 'package:verto_core/view/main/binding.dart';
 import 'package:verto_core/view/main/main.dart';
-import 'package:verto_core/view/sign_in/sign_in.dart';
 import 'package:verto_core/core/values/themes.dart';
 
 void main() {

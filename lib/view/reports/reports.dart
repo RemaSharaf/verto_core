@@ -1,15 +1,11 @@
 import 'dart:math';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'package:verto_core/core/values/colors.dart';
-import 'package:verto_core/view/home/widgets/eye.dart';
+import 'package:verto_core/view/home/widgets/notification.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Reports extends StatelessWidget {
@@ -18,25 +14,13 @@ class Reports extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Container(
-            margin: EdgeInsets.only(left: 22.w),
-            child: notification(),
-          )
-        ],
-        backgroundColor: orange,
-        centerTitle: true,
-        title: const Text(
-          "تقارير وعمليات",
-        ),
-      ),
       body: DefaultTabController(
         length: 2,
         initialIndex: 0,
         child: ListView(
           children: [
             Material(
+              color: Colors.white,
               child: TabBar(
                 padding: EdgeInsets.only(
                   top: 30.h,
@@ -53,6 +37,7 @@ class Reports extends StatelessWidget {
                   ),
                 ],
                 unselectedLabelColor: hint,
+                labelPadding: EdgeInsets.only(top: 5.h),
                 indicator: RectangularIndicator(
                   color: text,
                   verticalPadding: 7,
@@ -129,7 +114,7 @@ class Reports extends StatelessWidget {
                     padding: EdgeInsets.only(top: 13.h),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
+                    itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
                         padding: EdgeInsets.symmetric(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/view/home/widgets/notification.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Main extends GetView<HomeController> {
@@ -9,28 +10,47 @@ class Main extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-          child: Stack(
-        children: [
-          Obx(() => IndexedStack(
-              index: controller.tabIndex.value,
-              children: controller.widgets
-                  .map((e) => Container(
-                        child: e["Widget"],
-                      ))
-                  .toList())),
-          bottomNavigation()
-        ],
-      )),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: orange,
-        child: const Icon(Icons.apps),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
+    return Obx(() => Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar: AppBar(
+            actions: controller.tabIndex.value == 2
+                ? [
+                    Container(
+                      margin: EdgeInsets.only(left: 22.w),
+                      child: notification(),
+                    )
+                  ]
+                : [],
+            backgroundColor:
+                controller.tabIndex.value == 2 ? orange : Colors.transparent,
+            centerTitle: true,
+            title: controller.tabIndex.value == 2
+                ? const Text(
+                    "تقارير وعمليات",
+                  )
+                : Container(),
+          ),
+          backgroundColor: Colors.white,
+          body: Stack(
+            children: [
+              IndexedStack(
+                  index: controller.tabIndex.value,
+                  children: controller.widgets
+                      .map((e) => Container(
+                            child: e["Widget"],
+                          ))
+                      .toList()),
+              bottomNavigation()
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: orange,
+            child: const Icon(Icons.apps),
+            onPressed: () {},
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+        ));
   }
 }
 
