@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:verto_core/core/values/colors.dart';
 
 Widget notification() {
@@ -14,10 +15,12 @@ Widget notification() {
       ),
       shape: BoxShape.circle,
     ),
-    child: Center(
-      child: Stack(
-        children: [
-          Container(
+    child: Stack(
+      children: [
+        Positioned(
+          right: 8.w,
+          top: 8.h,
+          child: Container(
             width: 5.w,
             height: 5.h,
             decoration: const BoxDecoration(
@@ -25,11 +28,13 @@ Widget notification() {
               shape: BoxShape.circle,
             ),
           ),
-          const Icon(
-            Icons.notifications_outlined,
+        ),
+        Center(
+          child: SvgPicture.asset(
+            "assets/images/notification.svg",
           ),
-        ],
-      ),
+        )
+      ],
     ),
   );
 }

@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +10,7 @@ import 'package:verto_core/view/home/widgets/notification.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class Home extends GetView<HomeController> {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +137,7 @@ class Home extends GetView<HomeController> {
                   children: [
                     Center(
                       child: Container(
-                        margin: EdgeInsets.only(top: 19.h, bottom: 16.h),
+                        margin: EdgeInsets.only(top: 19.h),
                         width: 64.w,
                         height: 5.h,
                         decoration: BoxDecoration(

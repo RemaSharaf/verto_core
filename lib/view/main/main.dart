@@ -40,10 +40,10 @@ class Main extends GetView<HomeController> {
                             child: e["Widget"],
                           ))
                       .toList()),
-              // bottomNavigation()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
               showSelectedLabels: false,
               showUnselectedLabels: false,
               onTap: (value) {
@@ -55,9 +55,7 @@ class Main extends GetView<HomeController> {
                       backgroundColor: Colors.white,
                       label: e["title"],
                       icon: Container(
-                        // margin: controller.tabIndex.value == 1
-                        //     ? EdgeInsets.only(left: 20.w)
-                        //     : EdgeInsets.zero,
+                        margin: EdgeInsets.only(left: 5.w),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,

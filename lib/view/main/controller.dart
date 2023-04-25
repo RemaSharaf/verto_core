@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:verto_core/data/models/report_model.dart';
 import 'package:verto_core/view/home/home.dart';
 import 'package:verto_core/view/reports/reports.dart';
 
@@ -7,7 +8,8 @@ class HomeController extends GetxController {
   final tabIndex = 0.obs;
   final RxInt currentIndex = 0.obs;
   // final CarouselController carouselController = CarouselController();
-
+  final pageController = PageController();
+  final pageIndex = 0.obs;
   List widgets = [
     {"id": 0, "Widget": Home(), "icon": Icons.home, "title": "الرئيسية"},
     {
@@ -29,12 +31,12 @@ class HomeController extends GetxController {
     {"id": 2, "image_path": "assets/images/online-money.png"},
     {"id": 3, "image_path": "assets/images/online-money.png"},
   ];
-  List category = [
-    {"name": "Eating Out", "amount": 100.0},
-    {"name": "Bills", "amount": 100.0},
-    {"name": "Online Shopping", "amount": 20.0},
-    {"name": "Subscriptions", "amount": 100.0},
-    {"name": "Fees", "amount": 5.0},
+  List<GDPData> category = [
+    GDPData(name: "Eating Out", value: 100.0),
+    GDPData(name: "Bills", value: 100.0),
+    GDPData(name: "Online Shopping", value: 20.0),
+    GDPData(name: "Subscriptions", value: 100.0),
+    GDPData(name: "Fees", value: 5.0),
   ];
   List pieColors = [
     Colors.blue,
