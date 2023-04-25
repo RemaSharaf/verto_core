@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,12 @@ import 'package:verto_core/view/main/main.dart';
 import 'package:verto_core/core/values/themes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+    // DevicePreview(
+    //   builder: (context) => const MyApp(),
+    // ),
+  );
 }
 
 class MyApp extends StatelessWidget {

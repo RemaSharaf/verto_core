@@ -14,14 +14,14 @@ class HomeController extends GetxController {
       "id": 1,
       "Widget": Text("data"),
       "icon": Icons.heart_broken_outlined,
-      "title": "adf"
+      "title": "الرئيسية"
     },
-    {"id": 2, "Widget": Reports(), "icon": Icons.report, "title": "ewef"},
+    {"id": 2, "Widget": Reports(), "icon": Icons.report, "title": "التقارير"},
     {
       "id": 3,
       "Widget": const Text("data"),
       "icon": Icons.person_outline,
-      "title": "aass"
+      "title": "الرئيسية"
     },
   ];
   List images = [

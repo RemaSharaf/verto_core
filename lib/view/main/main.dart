@@ -40,14 +40,12 @@ class Main extends GetView<HomeController> {
                             child: e["Widget"],
                           ))
                       .toList()),
+              // bottomNavigation()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-              showSelectedLabels: true,
-              selectedLabelStyle: TextStyle(
-                color: orange,
-                fontSize: 12.sp,
-              ),
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
               onTap: (value) {
                 controller.tabIndex.value = value;
               },
@@ -56,11 +54,31 @@ class Main extends GetView<HomeController> {
                     (e) => BottomNavigationBarItem(
                       backgroundColor: Colors.white,
                       label: e["title"],
-                      icon: Icon(
-                        e["icon"],
-                        color: controller.tabIndex.value == e["id"]
-                            ? orange
-                            : hint,
+                      icon: Container(
+                        // margin: controller.tabIndex.value == 1
+                        //     ? EdgeInsets.only(left: 20.w)
+                        //     : EdgeInsets.zero,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              e["icon"],
+                              color: controller.tabIndex.value == e["id"]
+                                  ? orange
+                                  : hint,
+                            ),
+                            controller.tabIndex.value == e["id"]
+                                ? Text(
+                                    e["title"],
+                                    style: TextStyle(
+                                        fontSize: 12.sp,
+                                        color: orange,
+                                        fontFamily: "DroidArabic"),
+                                  )
+                                : Container(),
+                          ],
+                        ),
                       ),
                     ),
                   )
@@ -93,20 +111,34 @@ class Main extends GetView<HomeController> {
 //             mainAxisAlignment: MainAxisAlignment.spaceAround,
 //             children: controller.widgets
 //                 .map(
-//                   (e) => IconButton(
-//                     onPressed: () {
-//                       controller.changeTab(e["id"]);
+//                   (e) => GestureDetector(
+//                     onTap: () {
+//                       controller.tabIndex.value = e["id"];
 //                     },
-//                     icon: Icon(
-//                       e["icon"],
-//                       color:
-//                           controller.tabIndex.value == e["id"] ? orange : hint,
+//                     child: Row(
+//                       children: [
+//                         Container(
+//                           margin: EdgeInsets.only(left: 3.w),
+//                           child: Icon(
+//                             e["icon"],
+//                             color: controller.tabIndex.value == e["id"]
+//                                 ? orange
+//                                 : hint,
+//                           ),
+//                         ),
+//                         controller.tabIndex.value == e["id"]
+//                             ? Text(
+//                                 e["title"],
+//                                 style: TextStyle(
+//                                     fontSize: 12.sp,
+//                                     color: orange,
+//                                     fontFamily: "DroidArabic"),
+//                               )
+//                             : Container(),
+//                       ],
 //                     ),
 //                   ),
 //                 )
-//                 .toList()
-         
-//             )),
+//                 .toList())),
 //   );
 // }
-
