@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:verto_core/view/bottom_navigation_animated/bottom_navigation_animated.dart';
 import 'package:verto_core/view/main/binding.dart';
 import 'package:verto_core/view/main/main.dart';
 import 'package:verto_core/core/values/themes.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         theme: themes(),
         locale: const Locale("ar"),
         initialBinding: HomeBinding(),
-        home: const PayWithQuery(),
+        home: AnimatedBottomNavigation(),
       ),
     );
   }

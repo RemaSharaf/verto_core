@@ -10,6 +10,15 @@ class HomeController extends GetxController {
   // final CarouselController carouselController = CarouselController();
   final pageController = PageController();
   final pageIndex = 0.obs;
+  late AnimationController _fabAnimationController;
+  late AnimationController _borderRadiusAnimationController;
+  late Animation<double> borderRadiusAnimation;
+  List<IconData> icons = [
+    Icons.home,
+    Icons.heart_broken_outlined,
+    Icons.report,
+    Icons.person_outline,
+  ];
   List widgets = [
     {"id": 0, "Widget": Home(), "icon": Icons.home, "title": "الرئيسية"},
     {
