@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:verto_core/view/main/binding.dart';
 import 'package:verto_core/view/main/main.dart';
 import 'package:verto_core/core/values/themes.dart';
+import 'package:verto_core/view/pay_with_query/pay_with_query.dart';
+import 'package:verto_core/view/pay_balance/pay_balance.dart';
 
 void main() {
   runApp(
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: themes(),
         locale: const Locale("ar"),
         initialBinding: HomeBinding(),
-        home: Main(),
+        home: const PayWithQuery(),
       ),
     );
   }

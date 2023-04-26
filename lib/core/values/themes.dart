@@ -7,10 +7,15 @@ ThemeData themes() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
     fontFamily: "FFShamelFamily",
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
         color: Colors.transparent,
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 16.sp,
+          fontFamily: "FFShamelFamily",
+        ),
         elevation: 0,
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           systemNavigationBarColor: Colors.white,
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarDividerColor: Colors.black,
@@ -28,7 +33,11 @@ ThemeData themes() {
           color: orange,
           fontSize: 14,
         ),
-        bodySmall: TextStyle(color: hint, fontSize: 9)),
+        bodySmall: TextStyle(
+          color: hint,
+          fontSize: 11,
+          fontWeight: FontWeight.w300,
+        )),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 11.h),
       enabledBorder: OutlineInputBorder(

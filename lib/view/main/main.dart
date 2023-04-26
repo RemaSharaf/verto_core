@@ -56,26 +56,11 @@ class Main extends GetView<HomeController> {
                       label: e["title"],
                       icon: Container(
                         margin: EdgeInsets.only(left: 5.w),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              e["icon"],
-                              color: controller.tabIndex.value == e["id"]
-                                  ? orange
-                                  : hint,
-                            ),
-                            controller.tabIndex.value == e["id"]
-                                ? Text(
-                                    e["title"],
-                                    style: TextStyle(
-                                        fontSize: 12.sp,
-                                        color: orange,
-                                        fontFamily: "DroidArabic"),
-                                  )
-                                : Container(),
-                          ],
+                        child: Icon(
+                          e["icon"],
+                          color: controller.tabIndex.value == e["id"]
+                              ? orange
+                              : hint,
                         ),
                       ),
                     ),
