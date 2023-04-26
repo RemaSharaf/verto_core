@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/main.dart';
 
 Widget notification() {
   return Container(
@@ -31,9 +32,9 @@ Widget notification() {
         ),
         Center(
           child: SvgPicture.asset(
-            "assets/images/notification.svg",
+            appImages.svg.notification,
           ),
-        )
+        ),
       ],
     ),
   );

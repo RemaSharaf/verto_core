@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/data/models/report_model.dart';
+import 'package:verto_core/main.dart';
 import 'package:verto_core/view/home/home.dart';
 import 'package:verto_core/view/reports/reports.dart';
 
@@ -36,9 +37,9 @@ class HomeController extends GetxController {
     },
   ];
   List images = [
-    {"id": 1, "image_path": "assets/images/online-money.png"},
-    {"id": 2, "image_path": "assets/images/online-money.png"},
-    {"id": 3, "image_path": "assets/images/online-money.png"},
+    {"id": 1, "image_path": appImages.png.onlineMoney},
+    {"id": 2, "image_path": appImages.png.onlineMoney},
+    {"id": 3, "image_path": appImages.png.onlineMoney},
   ];
   List<GDPData> category = [
     GDPData(name: "Eating Out", value: 100.0),

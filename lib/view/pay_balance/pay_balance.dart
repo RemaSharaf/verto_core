@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/main.dart';
 import 'package:verto_core/view/pay_balance/widgets/app_bar.dart';
 import 'package:verto_core/view/sign_in/widgets/drop_down.dart';
 import 'package:verto_core/view/sign_in/widgets/text_filed.dart';
@@ -34,7 +35,7 @@ class PayBalance extends StatelessWidget {
                 children: [
                   Container(
                       margin: EdgeInsets.only(bottom: 22.h),
-                      child: Image.asset("assets/images/Rectangle.png")),
+                      child: Image.asset(appImages.png.rectangle)),
                   FiledText(
                     fullSize: true,
                     title: "رقم الجوال",

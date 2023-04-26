@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/main.dart';
 import 'package:verto_core/view/sign_in/widgets/drop_down.dart';
 import 'package:verto_core/view/sign_in/widgets/text_filed.dart';
 
@@ -30,7 +31,7 @@ class SignIN extends StatelessWidget {
                   ),
                   Container(
                       margin: EdgeInsets.only(bottom: 22.h),
-                      child: Image.asset("assets/images/Group.png")),
+                      child: Image.asset(appImages.png.group)),
                   Container(
                     margin: EdgeInsets.only(bottom: 15.h),
                     child: Text(

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:verto_core/core/values/colors.dart';
 import 'package:verto_core/data/models/report_model.dart';
+import 'package:verto_core/main.dart';
 import 'package:verto_core/view/main/controller.dart';
 
 class ReportPie extends StatelessWidget {
@@ -125,7 +126,7 @@ class ReportPie extends StatelessWidget {
                                 color: Colors.yellow[700],
                               ),
                               child: SvgPicture.asset(
-                                "assets/images/payout.svg",
+                                appImages.svg.payout,
                               ),
                             ),
                             const Text(

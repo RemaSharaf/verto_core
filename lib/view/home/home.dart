@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/core/values/colors.dart';
+import 'package:verto_core/main.dart';
 import 'package:verto_core/view/bottom_sheet.dart';
 import 'package:verto_core/view/home/widgets/notification.dart';
 import 'package:verto_core/view/main/controller.dart';
@@ -223,8 +224,7 @@ class Home extends GetView<HomeController> {
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                                 child: Center(
-                                  child: SvgPicture.asset(
-                                      "assets/images/Vector.svg"),
+                                  child: SvgPicture.asset(appImages.svg.vector),
                                 ),
                               ),
                               Text(
@@ -263,8 +263,9 @@ class Home extends GetView<HomeController> {
                         return GestureDetector(
                           onTap: () {
                             bottomSheet(
-                                icon:
-                                    SvgPicture.asset("assets/images/Layer.svg"),
+                                icon: SvgPicture.asset(
+                                  appImages.svg.layer,
+                                ),
                                 widget: const Text("data"),
                                 context: context);
                           },
@@ -295,7 +296,7 @@ class Home extends GetView<HomeController> {
                                         color: orange,
                                       ),
                                       child: SvgPicture.asset(
-                                        "assets/images/payout.svg",
+                                        appImages.svg.payout,
                                       ),
                                     ),
                                     Column(

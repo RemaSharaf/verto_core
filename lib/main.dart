@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:verto_core/images.dart';
 import 'package:verto_core/view/bottom_navigation_animated/bottom_navigation_animated.dart';
 import 'package:verto_core/view/main/binding.dart';
 import 'package:verto_core/view/main/main.dart';
@@ -9,6 +10,7 @@ import 'package:verto_core/core/values/themes.dart';
 import 'package:verto_core/view/pay_with_query/pay_with_query.dart';
 import 'package:verto_core/view/pay_balance/pay_balance.dart';
 
+AppImages appImages = AppImages();
 void main() {
   runApp(
     const MyApp(),
