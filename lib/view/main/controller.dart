@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:verto_core/data/models/report_model.dart';
+import 'package:verto_core/images.dart';
 import 'package:verto_core/main.dart';
 import 'package:verto_core/view/home/home.dart';
 import 'package:verto_core/view/reports/reports.dart';
@@ -11,20 +13,20 @@ class HomeController extends GetxController {
   // final CarouselController carouselController = CarouselController();
   final pageController = PageController();
   final pageIndex = 0.obs;
-  late AnimationController _fabAnimationController;
-  late AnimationController _borderRadiusAnimationController;
-  late Animation<double> borderRadiusAnimation;
+
   List<IconData> icons = [
-    Icons.home,
-    Icons.heart_broken_outlined,
-    Icons.report,
-    Icons.person_outline,
+    SvgIcons.home,
+    SvgIcons.heart,
+    SvgIcons.pie,
+    SvgIcons.person,
   ];
   List widgets = [
     {"id": 0, "Widget": Home(), "icon": Icons.home, "title": "الرئيسية"},
     {
       "id": 1,
-      "Widget": Text("data"),
+      "Widget": Center(
+        child: Text("data"),
+      ),
       "icon": Icons.heart_broken_outlined,
       "title": "الرئيسية"
     },

@@ -93,6 +93,10 @@ flutter:
     - family: DroidArabic
       fonts:
         - asset: fonts/DroidArabic.ttf
+    - family: MyFlutterApp
+      fonts:
+        - asset: fonts/MyFlutterApp.ttf
+
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

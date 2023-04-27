@@ -266,7 +266,18 @@ class Home extends GetView<HomeController> {
                                 icon: SvgPicture.asset(
                                   appImages.svg.layer,
                                 ),
-                                widget: const Text("data"),
+                                widget: Column(
+                                  children: [
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                    Text("data"),
+                                  ],
+                                ),
                                 context: context);
                           },
                           child: Container(

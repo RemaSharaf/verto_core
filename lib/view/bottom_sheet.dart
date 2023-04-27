@@ -56,7 +56,6 @@ bottomSheet({required Widget widget, required icon, required context}) {
                         child: Column(
                       children: [
                         widget,
-                        widget,
                       ],
                     ))),
               ),

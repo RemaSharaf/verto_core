@@ -49,12 +49,6 @@ class AnimatedBottomNavigation extends GetView<HomeController> {
             onTap: (p0) {
               controller.tabIndex.value = p0;
             },
-            // shadow: BoxShadow(
-            //   offset: Offset(0, 3),
-            //   blurRadius: 12,
-            //   spreadRadius: 0.5,
-            //   color: hint,
-            // ),
             backgroundColor: Colors.white,
             activeColor: orange,
             inactiveColor: hint,
